@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label>Thumbnail Processor</label>
+    <label lang="de">Thumbnail Processor</label>
+
+    <version>1.0.0</version>
+    <copyright>Friends of Shopware</copyright>
+    <license>MIT</license>
+    <link>https://github.com/FriendsOfShopware/FroshThumbnailProcessor</link>
+    <author>Friends of Shopware</author>
+
+    <description lang="en">Thumbnail-Processor using variable thumbnails.</description>
+    <description lang="de">Thumbnail-Processor zur Nutzung variabler Thumbnails</description>
+
+    <changelog version="1.0.0">
+        <changes lang="de">initial release</changes>
+        <changes>initial release</changes>
+    </changelog>
+
+</plugin>

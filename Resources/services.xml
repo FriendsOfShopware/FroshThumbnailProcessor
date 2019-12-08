@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="frosh_thumbnail_processor.components.thumbnail_generator" class="FroshThumbnailProcessor\Components\ThumbnailGenerator"
+                 decorates="thumbnail_generator_basic">
+            <argument type="service" id="frosh_thumbnail_processor.config"/>
+            <argument type="service" id="shopware_media.media_service"/>
+            <argument type="service" id="frosh_thumbnail_processor.components.thumbnail_generator.inner"/>
+        </service>
+
+        <service class="FroshThumbnailProcessor\Subscriber\LegacyStructConverterSubscriber">
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="frosh_thumbnail_processor.config" class="Shopware\Components\Plugin\CachedConfigReader">
+            <factory service="shopware.plugin.cached_config_reader" method="getByPluginName"/>
+            <argument type="string">%frosh_thumbnail_processor.plugin_name%</argument>
+        </service>
+
+        <service id="frosh_thumbnail_processor.commands.remove_thumbnails" class="FroshThumbnailProcessor\Bundle\Commands\RemoveThumbnails">
+            <tag name="console.command" command="frosh:thumbnails:remove"/>
+        </service>
+
+    </services>
+</container>

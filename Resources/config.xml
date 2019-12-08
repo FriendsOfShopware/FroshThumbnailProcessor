@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+
+        <element type="boolean">
+            <name>ThumbnailProcessor</name>
+            <label>activate Thumbnail Processor</label>
+            <label lang="de">aktiviere Thumbnail Processor</label>
+            <value>false</value>
+            <description>Use variable widths and heights to work with Manipulation Engine from bunnyCDN or Image Processor of keyCDN. This engine has to be enabled in their Dashboard.
+                Clear all caches after changing this option.
+                ATTENTION: when disabling, you would have to generate the thumbnails on your own.</description>
+
+        </element>
+
+    </elements>
+</config>
+
+
