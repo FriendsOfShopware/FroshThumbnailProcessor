@@ -2,18 +2,38 @@
 
 namespace FroshThumbnailProcessor\Services;
 
+use Shopware\Bundle\MediaBundle\MediaServiceInterface;
+
 class ThumbnailUrlTemplate implements ThumbnailUrlTemplateInterface
 {
     private $pattern;
 
-    public function __construct()
+    /* @var MediaServiceInterface */
+    private $mediaService;
+
+    public function __construct(MediaServiceInterface $mediaService, array $config)
     {
-        $this->pattern = '{mediaUrl}/{mediaPath}?width={width}&height={height}';
+        $this->pattern = $config['ThumbnailPattern'] ?: '{mediaUrl}/{mediaPath}?width={width}&height={height}&b';
+        $this->mediaService = $mediaService;
     }
 
-    public function getUrl($mediaUrl, $mediaPath, $width, $height)
+    /**
+     * @param $mediaPath
+     * @param $width
+     * @param $height
+     * @param bool|string $mediaUrl
+     *
+     * @return string
+     */
+    public function getUrl($mediaPath, $width, $height, $mediaUrl = false)
     {
         $result = $this->pattern;
+
+        if ($mediaUrl === true) {
+            $mediaUrl = substr($this->mediaService->getUrl('/'), 0, -1);
+        }
+
+        $mediaPath = $this->mediaService->encode($mediaPath);
 
         $result = str_replace(
             ['{mediaUrl}', '{mediaPath}', '{width}', '{height}'],

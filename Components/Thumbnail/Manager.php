@@ -2,6 +2,7 @@
 
 namespace FroshThumbnailProcessor\Components\Thumbnail;
 
+use FroshThumbnailProcessor\Services\ThumbnailUrlTemplateInterface;
 use Shopware\Bundle\MediaBundle\MediaServiceInterface;
 use Shopware\Components\Thumbnail\Generator\GeneratorInterface;
 
@@ -31,11 +32,18 @@ class Manager extends \Shopware\Components\Thumbnail\Manager
 
     private $shouldRun = true;
 
+    /* @var ThumbnailUrlTemplateInterface */
+    private $thumbnailUrlTpl;
+
     /**
      * {@inheritdoc}
      */
-    public function __construct(GeneratorInterface $generator, $rootDir, \Enlight_Event_EventManager $eventManager, MediaServiceInterface $mediaService)
-    {
+    public function __construct(
+        GeneratorInterface $generator,
+        $rootDir,
+        \Enlight_Event_EventManager $eventManager,
+        MediaServiceInterface $mediaService
+    ) {
         $this->generator = $generator;
         $this->rootDir = $rootDir;
         $this->eventManager = $eventManager;
@@ -44,6 +52,8 @@ class Manager extends \Shopware\Components\Thumbnail\Manager
         if (!Shopware()->Container()->get('frosh_thumbnail_processor.config')['ThumbnailProcessor']) {
             $this->shouldRun = false;
         }
+
+        $this->thumbnailUrlTpl = Shopware()->Container()->get('frosh_thumbnail_processor.services.thumbnail_url_template');
     }
 
     /**
@@ -63,8 +73,10 @@ class Manager extends \Shopware\Components\Thumbnail\Manager
             $thumbnails[] = [
                 'maxWidth' => $size['width'],
                 'maxHeight' => $size['height'],
-                'source' => $this->mediaService->encode($path . $name . '.' . $extension) . '?width=' . $size['width'] . '&height=' . $size['height'],
-                'retinaSource' => $this->mediaService->encode($path . $name . '.' . $extension) . '?width=' . ($size['width'] * 2) . '&height=' . ($size['height'] * 2),
+                'source' => $this->thumbnailUrlTpl->getUrl($path . $name . '.' . $extension, $size['width'],
+                    $size['height']),
+                'retinaSource' => $this->thumbnailUrlTpl->getUrl($path . $name . '.' . $extension, $size['width'] * 2,
+                    $size['height'] * 2),
             ];
         }
 

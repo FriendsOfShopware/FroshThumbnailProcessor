@@ -8,13 +8,11 @@ use Shopware\Components\Thumbnail\Generator\GeneratorInterface;
 class ThumbnailGenerator implements GeneratorInterface
 {
     private $parentGenerator;
-    private $mediaService;
     private $shouldRun = true;
 
-    public function __construct(array $config, MediaService $mediaService, GeneratorInterface $parentGenerator)
+    public function __construct(array $config, GeneratorInterface $parentGenerator)
     {
         $this->parentGenerator = $parentGenerator;
-        $this->mediaService = $mediaService;
         if (!$config['ThumbnailProcessor']) {
             $this->shouldRun = false;
         }

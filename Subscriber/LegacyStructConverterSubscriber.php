@@ -12,6 +12,11 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
     /* @var ThumbnailUrlTemplateInterface */
     private $thumbnailUrlTpl;
 
+    public function __construct(ThumbnailUrlTemplateInterface $thumbnailUrlTpl)
+    {
+        $this->thumbnailUrlTpl = $thumbnailUrlTpl;
+    }
+
     public static function getSubscribedEvents()
     {
         return [
@@ -29,8 +34,6 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
 
         /** @var Media $media */
         $media = $args->get('media');
-
-        $this->thumbnailUrlTpl = Shopware()->Container()->get('frosh_thumbnail_processor.services.thumbnail_url_template');
 
         foreach ($data['thumbnails'] as &$thumbnail) {
             $thumbnail = [
@@ -52,8 +55,7 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
      */
     private function getSource(Media $media, int $maxWidth, int $maxHeight)
     {
-        return $this->thumbnailUrlTpl->getUrl('',$media->getPath(),$maxWidth, $maxHeight);
-        return $media->getFile() . '?width=' . $maxWidth . '&height=' . $maxHeight;
+        return $this->thumbnailUrlTpl->getUrl($media->getPath(), $maxWidth, $maxHeight, true);
     }
 
     /**
@@ -61,7 +63,7 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
      */
     private function getRetinaSource(Media $media, int $maxWidth, int $maxHeight)
     {
-        return $media->getFile() . '?width=' . ($maxWidth * 2) . '&height=' . ($maxHeight * 2);
+        return $this->thumbnailUrlTpl->getUrl($media->getPath(), $maxWidth * 2, $maxHeight * 2, true);
     }
 
     /**
