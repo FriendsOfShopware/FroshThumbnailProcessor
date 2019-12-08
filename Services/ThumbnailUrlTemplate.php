@@ -13,7 +13,7 @@ class ThumbnailUrlTemplate implements ThumbnailUrlTemplateInterface
 
     public function __construct(MediaServiceInterface $mediaService, array $config)
     {
-        $this->pattern = $config['ThumbnailPattern'] ?: '{mediaUrl}/{mediaPath}?width={width}&height={height}&b';
+        $this->pattern = $config['ThumbnailPattern'] ?: '{mediaUrl}/{mediaPath}?width={width}&height={height}';
         $this->mediaService = $mediaService;
     }
 
