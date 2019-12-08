@@ -3,11 +3,15 @@
 namespace FroshThumbnailProcessor\Subscriber;
 
 use Enlight\Event\SubscriberInterface;
+use FroshThumbnailProcessor\Services\ThumbnailUrlTemplateInterface;
 use Shopware\Bundle\StoreFrontBundle\Struct\Media;
 use Shopware\Bundle\StoreFrontBundle\Struct\Thumbnail;
 
 class LegacyStructConverterSubscriber implements SubscriberInterface
 {
+    /* @var ThumbnailUrlTemplateInterface */
+    private $thumbnailUrlTpl;
+
     public static function getSubscribedEvents()
     {
         return [
@@ -25,6 +29,8 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
 
         /** @var Media $media */
         $media = $args->get('media');
+
+        $this->thumbnailUrlTpl = Shopware()->Container()->get('frosh_thumbnail_processor.services.thumbnail_url_template');
 
         foreach ($data['thumbnails'] as &$thumbnail) {
             $thumbnail = [
@@ -46,6 +52,7 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
      */
     private function getSource(Media $media, int $maxWidth, int $maxHeight)
     {
+        return $this->thumbnailUrlTpl->getUrl('',$media->getPath(),$maxWidth, $maxHeight);
         return $media->getFile() . '?width=' . $maxWidth . '&height=' . $maxHeight;
     }
 

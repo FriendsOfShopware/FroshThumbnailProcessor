@@ -26,5 +26,8 @@
             <tag name="console.command" command="frosh:thumbnails:remove"/>
         </service>
 
+        <service id="frosh_thumbnail_processor.services.thumbnail_url_template" class="FroshThumbnailProcessor\Services\ThumbnailUrlTemplate">
+        </service>
+
     </services>
 </container>

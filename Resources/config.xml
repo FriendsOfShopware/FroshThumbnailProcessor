@@ -14,6 +14,21 @@
 
         </element>
 
+        <element type="boolean">
+            <name>ThumbnailPattern</name>
+            <label>Thumbnail Schema</label>
+            <label lang="de">Thumbnail Schema</label>
+            <value>{mediaUrl}/{mediaPath}?width={width}&height={height}</value>
+            <description>
+                examples:
+                {mediaUrl}: https://cdn.test.de/
+                {mediaPath}: media/image/5b/6d/16/tea.png
+                {width}: 800
+                {height}: 800
+            </description>
+
+        </element>
+
     </elements>
 </config>
 
