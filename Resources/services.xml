@@ -9,11 +9,11 @@
         <service id="frosh_thumbnail_processor.components.thumbnail_generator" class="FroshThumbnailProcessor\Components\ThumbnailGenerator"
                  decorates="thumbnail_generator_basic">
             <argument type="service" id="frosh_thumbnail_processor.config"/>
-            <argument type="service" id="shopware_media.media_service"/>
             <argument type="service" id="frosh_thumbnail_processor.components.thumbnail_generator.inner"/>
         </service>
 
         <service class="FroshThumbnailProcessor\Subscriber\LegacyStructConverterSubscriber">
+            <argument type="service" id="frosh_thumbnail_processor.services.thumbnail_url_template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
 
@@ -24,6 +24,11 @@
 
         <service id="frosh_thumbnail_processor.commands.remove_thumbnails" class="FroshThumbnailProcessor\Bundle\Commands\RemoveThumbnails">
             <tag name="console.command" command="frosh:thumbnails:remove"/>
+        </service>
+
+        <service id="frosh_thumbnail_processor.services.thumbnail_url_template" class="FroshThumbnailProcessor\Services\ThumbnailUrlTemplate">
+            <argument type="service" id="shopware_media.media_service"/>
+            <argument type="service" id="frosh_thumbnail_processor.config"/>
         </service>
 
     </services>

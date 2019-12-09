@@ -22,7 +22,7 @@ https://cdn.example.de/media/image/52/5b/a1/sasse.png?width=200&height=200
 ````
 
 To remove all thumbnails use following command. This will collect and remove all thumbnails related to the media manager:
-`bin/console bunnycdn:thumbnails:remove`
+`bin/console frosh:thumbnails:remove`
 
 ## Tested Supports
 

@@ -11,6 +11,20 @@
             <description>Use variable widths and heights to work with Manipulation Engine from bunnyCDN or Image Processor of keyCDN. This engine has to be enabled in their Dashboard.
                 Clear all caches after changing this option.
                 ATTENTION: when disabling, you would have to generate the thumbnails on your own.</description>
+        </element>
+
+        <element type="text">
+            <name>ThumbnailPattern</name>
+            <label>Thumbnail Schema</label>
+            <label lang="de">Thumbnail Schema</label>
+            <value>{mediaUrl}/{mediaPath}?width={width}&amp;height={height}</value>
+            <description>
+                available variables:
+                {mediaUrl}: https://cdn.test.de/
+                {mediaPath}: media/image/5b/6d/16/tea.png
+                {width}: 800
+                {height}: 800
+            </description>
 
         </element>
 
