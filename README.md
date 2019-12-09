@@ -11,7 +11,7 @@ Download the plugin from the release page and enable it in shopware.
 
 ## Usage
 
-You can activate using of Thumbnail Processor in plugin.
+You can activate using of Thumbnail Processor in plugin. Clear all caches after changing settings.
 This will access all thumbnails variable from original image. The thumbnail-files won't be needed anymore.
 
 ````
@@ -20,6 +20,12 @@ https://cdn.example.de/media/image/01/82/69/sasse_200x200.png
  becomes:
 https://cdn.example.de/media/image/52/5b/a1/sasse.png?width=200&height=200
 ````
+You can edit the thumbnail-template within the plugin-config.
+Available variables with examples, default `{mediaUrl}/{mediaPath}?width={width}&height={height}`:
+{mediaUrl}: https://cdn.test.de/
+{mediaPath}: media/image/5b/6d/16/tea.png
+{width}: 800
+{height}: 800
 
 To remove all thumbnails use following command. This will collect and remove all thumbnails related to the media manager:
 `bin/console frosh:thumbnails:remove`
