@@ -4,13 +4,13 @@
 
 This plugins allows you to use variable thumbnails, if your filesystem (or storage-adapter) supports.
 It will add parameters to original image paths.
+So you are able to save storage and add new thumbnails on the fly.
 
 ## Install
 
 Download the plugin from the release page and enable it in shopware.
 
 ## Usage
-
 You can activate using of Thumbnail Processor in plugin. Clear all caches after changing settings.
 This will access all thumbnails variable from original image. The thumbnail-files won't be needed anymore.
 
@@ -20,21 +20,24 @@ https://cdn.example.de/media/image/01/82/69/sasse_200x200.png
  becomes:
 https://cdn.example.de/media/image/52/5b/a1/sasse.png?width=200&height=200
 ````
-You can edit the thumbnail-template within the plugin-config.
-Available variables with examples, default `{mediaUrl}/{mediaPath}?width={width}&height={height}`:
-{mediaUrl}: https://cdn.test.de/
-{mediaPath}: media/image/5b/6d/16/tea.png
-{width}: 800
-{height}: 800
+You can edit the thumbnail-template within the plugin-config. Defaults `{mediaUrl}/{mediaPath}?width={width}&height={height}`.
+Available variables with examples:
+* {mediaUrl}: https://cdn.test.de/
+* {mediaPath}: media/image/5b/6d/16/tea.png
+* {width}: 800
+* {height}: 800
 
 To remove all thumbnails use following command. This will collect and remove all thumbnails related to the media manager:
 `bin/console frosh:thumbnails:remove`
 
 ## Tested Supports
 
+### imgproxy
+
+Tested with insecure environment for internal test-shops. Template: http://localhost:8080/insecure/fill/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}
+
 ### BunnyCDN
 
-So you are able to save traffic and add new thumbnails on the fly.
 You would have to active `Bunny Optimizer` and `Manipulation Engine` in your Zone in BunnyCDN.
 
 ![Activate Manipulation Engine](Resources/store/images/1.jpg)
