@@ -27,6 +27,7 @@ Available variables with examples:
 * {width}: 800
 * {height}: 800
 
+### Removing unneeded thumbnails
 To remove all thumbnails use following command. This will collect and remove all thumbnails related to the media manager:
 `bin/console frosh:thumbnails:remove`
 
@@ -34,7 +35,7 @@ To remove all thumbnails use following command. This will collect and remove all
 
 ### imgproxy
 
-Tested with insecure environment for internal test-shops. Template: http://localhost:8080/insecure/fill/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}
+Tested with insecure environment for internal test-shops. Template example: `http://localhost:8080/insecure/fill/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}`.
 
 ### BunnyCDN
 
