@@ -13,11 +13,11 @@
                 ATTENTION: when disabling, you would have to generate the thumbnails on your own.</description>
         </element>
 
-        <element type="boolean">
+        <element type="text">
             <name>ThumbnailPattern</name>
             <label>Thumbnail Schema</label>
             <label lang="de">Thumbnail Schema</label>
-            <value>{mediaUrl}/{mediaPath}?width={width}&height={height}</value>
+            <value>{mediaUrl}/{mediaPath}?width={width}&amp;height={height}</value>
             <description>
                 available variables:
                 {mediaUrl}: https://cdn.test.de/
