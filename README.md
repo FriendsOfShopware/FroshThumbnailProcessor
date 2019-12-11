@@ -33,15 +33,19 @@ To remove all thumbnails use following command. This will collect and remove all
 
 ## Tested Supports
 
-### imgproxy
+### imgproxy [Link](https://imgproxy.net/)
 
 Tested with insecure environment for internal test-shops. Template example: `http://localhost:8080/insecure/fill/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}`.
 
-### BunnyCDN
+### BunnyCDN [Link](https://bunnycdn.com/)
 
 You would have to active `Bunny Optimizer` and `Manipulation Engine` in your Zone in BunnyCDN.
 
 ![Activate Manipulation Engine](Resources/store/images/1.jpg)
+
+### Images.weserv.nl [Link](https://images.weserv.nl/)
+
+An image cache & resize service. Manipulate images on-the-fly with a worldwide cache. Template example: `https://images.weserv.nl/?url={mediaUrl}/{mediaPath}&w={width}&h={height}`.
 
 ## License
 
