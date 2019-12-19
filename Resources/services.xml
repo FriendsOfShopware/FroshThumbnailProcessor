@@ -31,5 +31,9 @@
             <argument type="service" id="frosh_thumbnail_processor.config"/>
         </service>
 
+        <service id="frosh_thumbnail_processor.services.media_service" class="FroshThumbnailProcessor\Services\MediaService" decorates="shopware_media.media_service">
+            <argument type="service" id="frosh_thumbnail_processor.services.media_service.inner"/>
+        </service>
+
     </services>
 </container>

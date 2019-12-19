@@ -55,7 +55,7 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
      */
     private function getSource(Media $media, int $maxWidth, int $maxHeight)
     {
-        return $this->thumbnailUrlTpl->getUrl($media->getPath(), $maxWidth, $maxHeight, true);
+        return $this->thumbnailUrlTpl->getUrl($media->getPath(), $maxWidth, $maxHeight);
     }
 
     /**
@@ -63,7 +63,7 @@ class LegacyStructConverterSubscriber implements SubscriberInterface
      */
     private function getRetinaSource(Media $media, int $maxWidth, int $maxHeight)
     {
-        return $this->thumbnailUrlTpl->getUrl($media->getPath(), $maxWidth * 2, $maxHeight * 2, true);
+        return $this->thumbnailUrlTpl->getUrl($media->getPath(), $maxWidth * 2, $maxHeight * 2);
     }
 
     /**

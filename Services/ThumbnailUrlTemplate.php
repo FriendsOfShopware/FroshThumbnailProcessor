@@ -25,13 +25,11 @@ class ThumbnailUrlTemplate implements ThumbnailUrlTemplateInterface
      *
      * @return string
      */
-    public function getUrl($mediaPath, $width, $height, $mediaUrl = false)
+    public function getUrl($mediaPath, $width, $height)
     {
         $result = $this->pattern;
 
-        if ($mediaUrl === true) {
-            $mediaUrl = substr($this->mediaService->getUrl('/'), 0, -1);
-        }
+        $mediaUrl = substr($this->mediaService->getUrl('/'), 0, -1);
 
         $mediaPath = $this->mediaService->encode($mediaPath);
 
