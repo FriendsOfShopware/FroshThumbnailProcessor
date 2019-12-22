@@ -35,7 +35,7 @@ To remove all thumbnails use following command. This will collect and remove all
 
 ### imgproxy [Link](https://imgproxy.net/)
 
-Tested with insecure environment for internal test-shops. Template example: `http://localhost:8080/insecure/fill/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}`.
+Tested with insecure environment for internal test-shops. Template example: `http://localhost:8080/insecure/fit/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}`.
 
 ### BunnyCDN [Link](https://bunnycdn.com/)
 
