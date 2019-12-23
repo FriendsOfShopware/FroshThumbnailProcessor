@@ -1,7 +1,7 @@
 {
   "name": "frosh/thumbnail-processor",
-  "keywords": ["shopware", "backend", "media", "media manager", "bunnyCDN", "storage"],
-  "description": "bunnyCDN",
+  "keywords": ["shopware", "backend", "media", "media manager", "cdn", "storage", "thumbnail"],
+  "description": "This plugins allows you to use variable thumbnails, without having them on storage.",
   "license": "MIT",
   "type": "shopware-plugin",
   "extra": {
