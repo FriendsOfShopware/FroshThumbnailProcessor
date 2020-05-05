@@ -1,0 +1,47 @@
+<p>
+    Mit diesem Plugin können Sie auf dynamische Thumbnails zurückgreifen.<br>
+    Jedes Aritkel, jedes Bild in der Einkaufswelten hat berechtigterweise Thumbnails. Diese werden standardmässig
+    automatisch beim Upload erzeugt und gespeichert.
+    An diesem Punkt greift dieses Plugin ein und stellt die Funktion zur Verfügung, dass keine Thumbnails mehr erstellt
+    werden müssen.<br>
+    Die Thumbnails werden dann in Echtzeit beim Besuch durch einen externen Dienst erzeugt und ausgeliefert.
+</p>
+
+<h2>Vorteile vom Sparen der Thumbnailerzeugung:</h2>
+<ul>
+    <li>Sparen von Speicherplatz</li>
+    <li>Schnellerer Upload von Bildern</li>
+    <li>Schnellere Backups durch weniger Dateien</li>
+</ul>
+
+<h2>Welchen Dienst verwende ich nun für die Thumbnails:</h2>
+Wir haben schon Erfahrung mit folgenden Diensten gemacht.
+<ul>
+    <li><a href="https://imgproxy.net/">imgproxy</a> (kostenlos, selbst gehosted)<br>
+        Template-Beispiel: http://localhost:8080/insecure/fit/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}
+    </li>
+    <li><a href="https://bunnycdn.com">BunnyCDN</a> (kostenpflichtig)<br>
+        Template-Beispiel: {mediaUrl}/{mediaPath}?width={width}&height={height}
+    </li>
+    <li><a href="https://www.keycdn.com/support/image-processing">keycdn</a> (kostenpflichtig)<br>
+        Template-Beispiel: {mediaUrl}/{mediaPath}?width={width}&height={height}
+    </li>
+    <li><a href="https://images.weserv.nl/">images.weserv.nl</a> (kostenlos)<br>
+        Template-Beispiel: https://images.weserv.nl/?url={mediaUrl}/{mediaPath}&w={width}&h={height}
+    </li>
+</ul>
+Jegliche Dienstleister, die per Url-Parameter Bildergrö0en ändern, sollten aber auch kompatibel sein.
+
+<p>
+    <a href="https://github.com/FriendsOfShopware/FroshThumbnailProcessor" target="_blank"
+       style="display: inline-block;"><img
+        src="https://img.shields.io/badge/Github-FroshThumbnailProcessor-green.svg"></a><br>
+    Dieses Plugin wird von <a href="https://store.shopware.com/friends-of-shopware.html" target="_blank">@FriendsOfShopware</a>
+    entwickelt.
+    Maintainer dieses Plugins ist: <a href="https://github.com/tinect" target="_blank">Sebastian König (tinect)</a>
+</p>
+
+<p>
+    Bei Fragen / Fehlern bitte ein <a href="https://github.com/FriendsOfShopware/FroshThumbnailProcessor/issues/new"
+                                      target="_blank">Github Issue</a> erstellen
+</p>
