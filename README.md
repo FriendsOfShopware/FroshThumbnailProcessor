@@ -41,7 +41,7 @@ Tested with insecure environment for internal test-shops. Template example: `htt
 
 You would have to active `Bunny Optimizer` and `Manipulation Engine` in your Zone in BunnyCDN.
 
-![Activate Manipulation Engine](Resources/store/images/1.jpg)
+![Activate Manipulation Engine](Resources/store/docs/images/bunnycdn_1.jpg)
 
 ### Images.weserv.nl [Link](https://images.weserv.nl/)
 

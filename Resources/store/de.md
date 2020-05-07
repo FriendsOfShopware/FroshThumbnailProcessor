@@ -13,12 +13,12 @@ Die Thumbnails werden dann in Echtzeit beim Besuch durch einen externen Dienst e
 
 ## Welchen Dienst verwende ich nun für die Thumbnails:
 Wir haben schon Erfahrung mit folgenden Diensten gemacht.
-- [imgproxy](https://imgproxy.net/) (kostenlos, selbst gehosted)  
-  Template-Beispiel: http://localhost:8080/insecure/fit/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}
 - [BunnyCDN](https://bunnycdn.com) (kostenpflichtig)  
   Template-Beispiel: {mediaUrl}/{mediaPath}?width={width}&height={height}
 - [keycdn](https://www.keycdn.com/support/image-processing) (kostenpflichtig)  
   Template-Beispiel: {mediaUrl}/{mediaPath}?width={width}&height={height}
+- [imgproxy](https://imgproxy.net/) (kostenlos, selbst gehosted)  
+  Template-Beispiel: http://localhost:8080/insecure/fit/{width}/{height}/sm/0/plain/{mediaUrl}/{mediaPath}
 - [images.weserv.nl](https://images.weserv.nl/) (kostenlos)  
   Template-Beispiel: https://images.weserv.nl/?url={mediaUrl}/{mediaPath}&w={width}&h={height}
 
