@@ -5,11 +5,12 @@ An diesem Punkt greift dieses Plugin ein und stellt die Funktion zur Verfügung,
 werden müssen.  
 Die Thumbnails werden dann in Echtzeit beim Besuch durch einen externen Dienst erzeugt und ausgeliefert.
 
-## Vorteile vom Sparen der Thumbnailerzeugung:
+## Vorteile beim Sparen der Thumbnailerzeugung:
 - Sparen von Speicherplatz
 - Schnellerer Upload von Bildern
 - Entlastung des Servers
 - Schnellere Backups durch weniger Dateien
+- Definieren neuer Thumbnailgrößen on-the-fly
 
 ## Welchen Dienst verwende ich nun für die Thumbnails?
 Wir haben schon Erfahrung mit folgenden Diensten gemacht.
@@ -23,8 +24,6 @@ Wir haben schon Erfahrung mit folgenden Diensten gemacht.
   Template-Beispiel: https://images.weserv.nl/?url={mediaUrl}/{mediaPath}&w={width}&h={height}
 
 Jegliche Dienstleister, die per Url-Parameter Bildergrö0en ändern, sollten aber auch kompatibel sein.
-
-![Github-FroshThumbnailProcessor](https://img.shields.io/badge/Github-FroshThumbnailProcessor-green.svg)
 
 Dieses Plugin wird von [@FriendsOfShopware](https://store.shopware.com/friends-of-shopware.html) entwickelt.  
 Maintainer dieses Plugins ist: [Sebastian König (tinect)](https://github.com/tinect)
