@@ -1,4 +1,4 @@
-# Thumbnail Processor for Shopware
+# Thumbnail Processor for Shopware 5
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
