@@ -12,12 +12,12 @@
             <argument type="service" id="frosh_thumbnail_processor.components.thumbnail_generator.inner"/>
         </service>
 
-        <service class="FroshThumbnailProcessor\Subscriber\LegacyStructConverterSubscriber">
+        <service id="frosh_thumbnail_processor.subscriber.legacy_struct_converter" class="FroshThumbnailProcessor\Subscriber\LegacyStructConverterSubscriber">
             <argument type="service" id="frosh_thumbnail_processor.services.thumbnail_url_template"/>
             <tag name="shopware.event_subscriber"/>
         </service>
 
-        <service id="frosh_thumbnail_processor.config" class="Shopware\Components\Plugin\CachedConfigReader">
+        <service id="frosh_thumbnail_processor.config" class="Shopware\Components\Plugin\CachedConfigReader" public="true">
             <factory service="shopware.plugin.cached_config_reader" method="getByPluginName"/>
             <argument type="string">%frosh_thumbnail_processor.plugin_name%</argument>
         </service>
@@ -26,7 +26,7 @@
             <tag name="console.command" command="frosh:thumbnails:remove"/>
         </service>
 
-        <service id="frosh_thumbnail_processor.services.thumbnail_url_template" class="FroshThumbnailProcessor\Services\ThumbnailUrlTemplate">
+        <service id="frosh_thumbnail_processor.services.thumbnail_url_template" class="FroshThumbnailProcessor\Services\ThumbnailUrlTemplate" public="true">
             <argument type="service" id="shopware_media.media_service"/>
             <argument type="service" id="frosh_thumbnail_processor.config"/>
         </service>

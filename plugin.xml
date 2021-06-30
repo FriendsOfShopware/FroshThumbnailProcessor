@@ -6,7 +6,7 @@
     <label>Thumbnail Processor</label>
     <label lang="de">Thumbnail Processor</label>
 
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <copyright>Friends of Shopware</copyright>
     <license>MIT</license>
     <link>https://github.com/FriendsOfShopware/FroshThumbnailProcessor</link>
@@ -14,6 +14,11 @@
 
     <description lang="en">Thumbnail-Processor using variable thumbnails.</description>
     <description lang="de">Thumbnail-Processor zur Nutzung variabler Thumbnails</description>
+
+    <changelog version="1.0.1">
+        <changes lang="de">Support für SW5.7</changes>
+        <changes>Add support for SW5.7</changes>
+    </changelog>
 
     <changelog version="1.0.0">
         <changes lang="de">initial release</changes>
